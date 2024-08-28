@@ -26,7 +26,6 @@ import android.renderscript.Element
 import android.renderscript.RenderScript
 import android.renderscript.ScriptIntrinsicYuvToRGB
 import android.renderscript.Type
-import org.tensorflow.lite.examples.classification.BuildConfig
 import java.nio.ByteBuffer
 
 /**
@@ -87,7 +86,7 @@ class YuvToRgbConverter(context: Context) {
     }
 
     private fun imageToByteBuffer(image: Image, outputBuffer: ByteArray) {
-        if (BuildConfig.DEBUG && image.format != ImageFormat.YUV_420_888) {
+        if (image.format != ImageFormat.YUV_420_888) {
             error("Assertion failed")
         }
 
